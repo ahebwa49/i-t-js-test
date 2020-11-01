@@ -3,6 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const distPath = path.resolve(__dirname, "dist");
 
@@ -33,6 +34,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/templates/index.html")
     }),
-    new MiniCssExtractPlugin({ filename: "styles.[hash].css" })
+    new MiniCssExtractPlugin({ filename: "styles.[hash].css" }),
+    new Dotenv()
   ]
 };

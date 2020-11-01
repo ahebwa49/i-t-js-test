@@ -5,7 +5,9 @@ export const fetchWeatherData = (args: (string | number)[]) => {
 
   axios
     .get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${postalCode}&appid=dd05d606881a63228048476dcf7038c4`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${postalCode}&appid=${
+        process.env.APIkey
+      }`,
       {
         headers: {
           "Content-Type": "application/json"
